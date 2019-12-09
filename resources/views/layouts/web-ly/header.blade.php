@@ -24,9 +24,9 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#intro">Inicio</a></li>
-            <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#noticias">Noticias</a></li>
             <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#eventos">Eventos</a></li>
             <li><a href="#contactos">Contactos</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>Más <b class="caret"></b></a>

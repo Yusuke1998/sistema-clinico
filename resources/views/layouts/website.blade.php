@@ -21,77 +21,22 @@
                             :autoplay="true"
                             autoplay_speed="3"
                             :nav="false"
+                            :margin="10"
                             :items="4">
-                            <img src="{{asset('website/img/photo/1.jpg')}}">
-                            <img src="{{asset('website/img/photo/2.jpg')}}">
-                            <img src="{{asset('website/img/photo/3.jpg')}}">
-                            <img src="{{asset('website/img/photo/4.jpg')}}">
-                            <img src="{{asset('website/img/photo/5.jpg')}}">
-                            <img src="{{asset('website/img/photo/6.jpg')}}">
+                            <div v-for="(v,index) in 'mariaa'" class="panel">
+                                <div class="panel-body">
+                                    <img :src="$root.base_url+'website/img/photo/'+(index+1)+'.jpg'">
+                                </div>
+                                <div class="panel-footer">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                            
                         </v-carousel>
                     </div>
                 </div>      
             </section>
             <!-- /Section: intro -->
-
-            <!-- Section: eventos -->
-            <section id="eventos" class="home-section nopadding paddingtop-60">
-                <div class="container">
-                    <div class="row">
-                        
-                    </div>      
-                </div>
-            </section>
-            <!-- /Section: eventos -->
-
-            <!-- Section: noticias -->
-            <section id="noticias" class="home-section nopadding paddingtop-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-title">Hola</div>
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-title">Hola</div>
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-title">Hola</div>
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-title">Hola</div>
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                </div>
-                            </div>
-                        </div>
-                    </div>      
-                </div>
-            </section>
-            <!-- /Section: noticias -->
 
             <!-- Section: servicios -->
             <section id="servicios" class="home-section nopadding paddingtop-60">
@@ -177,11 +122,51 @@
             </section>
             <!-- /Section: servicios -->
 
+            <section class="home-section nopadding paddingtop-60">
+                <div class="container">
+                    <div class="row">
+                        <div id="noticias" class="col-md-8">
+                            <h4>Noticias</h4>
+                            <!-- noticias -->
+                            <div class="media" v-for="(v,index) in 'vainas'">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img width="190" class="media-object" :src="$root.base_url+'website/img/photo/'+(index+1)+'.jpg'" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <small>1<span v-text="(index+1)"></span> DIC 2019 | SALUD</small>
+                                <h5 class="media-heading">Media heading</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                              </div>
+                            </div>
+                            <!-- /noticias -->
+                        </div>
+                        <div id="eventos" class="col-md-4">
+                            <!-- eventos -->
+                            <h4>Eventos</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Morbi leo risus</li>
+                              <li class="list-group-item">Porta ac consectetur ac</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                            <!-- /eventos -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Section: contactos -->
             <section id="contactos" class="home-section nopadding paddingtop-60">
                 <div class="container">
                     <div class="row">
-                        
+                        <div class="col-12">
+                            <form method="post" action="">
+                                
+                            </form>
+                        </div>
                     </div>      
                 </div>
             </section>
@@ -214,7 +199,7 @@
                         </div>
                     </div> 
                     <div class="col-md-12 text-center text-uppercase">
-                        <small>Dirección de Informatica / UNERG / JhonnyPrz</small>
+                        <small>Dirección de Informatica / UNERG / <a href="https://github.com/yusuke1998" target="_blank">JhonnyPrz</a></small>
                     </div> 
                 </div>
             </footer>

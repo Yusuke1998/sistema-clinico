@@ -38,6 +38,14 @@ import {en, es} from 'vuejs-datepicker/dist/locale'
 
 const app = new Vue({
     el: '#app',
+    data(){
+        return {
+            base_url:location.href
+        }
+    },
+    mounted(){
+        console.log(this.base_url)
+    },
     methods:{
         /* REUTILIZABLESS */
         loading(name, content)

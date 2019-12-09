@@ -77842,6 +77842,14 @@ Vue.component('datepicker', vuejs_datepicker__WEBPACK_IMPORTED_MODULE_7__["defau
 
 var app = new Vue({
   el: '#app',
+  data: function data() {
+    return {
+      base_url: location.href
+    };
+  },
+  mounted: function mounted() {
+    console.log(this.base_url);
+  },
   methods: {
     /* REUTILIZABLESS */
     loading: function loading(name, content) {
