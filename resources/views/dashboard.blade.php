@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="bg-image overflow-hidden" style="background-image: url('{{ asset('assets/img/dashboard.png') }}')!important;background-size: 500px 100px !important;background-position: center !important;background-repeat: no-repeat !important;">
-    <div class="bg-primary-dark-op">
+<div class="bg-image overflow-hidden" style="background-image: url('{{ asset('website/img/logo.png') }}')!important;background-size: 300px 70px !important;background-position: center !important;background-repeat: no-repeat !important;">
+    <div class="">
         <div class="content content-narrow content-full">
-            <h1 align="center" class="font-w600 text-white mb-0 invisible" data-toggle="appear">(CLINICLIU)</h1>
+            
         </div>
     </div>
 </div>

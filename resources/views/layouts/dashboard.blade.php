@@ -13,7 +13,6 @@
 <body>
     <div id="app">
         <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
-            @include('layouts.dash-ly.aside-rigth')
             @include('layouts.dash-ly.sidebar')
             @include('layouts.dash-ly.header')
             <main id="main-container">

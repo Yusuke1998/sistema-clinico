@@ -42,9 +42,6 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-sm btn-dual ml-2" data-toggle="layout" data-action="side_overlay_toggle">
-                <i class="fa fa-fw fa-list-ul fa-flip-horizontal"></i>
-            </button>
         </div>
     </div>
     <div id="page-header-loader" class="overlay-header bg-white">

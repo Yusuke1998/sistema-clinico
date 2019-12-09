@@ -41,6 +41,7 @@
             <!-- Section: servicios -->
             <section id="servicios" class="home-section nopadding paddingtop-60">
                 <div class="container">
+                    <h4>Servicios</h4>
                     <div class="row">
                         <div class="col-sm-6 col-md-6">
                             <div class="wow fadeInUp" data-wow-delay="0.2s">
@@ -122,10 +123,10 @@
             </section>
             <!-- /Section: servicios -->
 
-            <section class="home-section nopadding paddingtop-60">
+            <section id="noticias-eventos" class="home-section nopadding paddingtop-60">
                 <div class="container">
                     <div class="row">
-                        <div id="noticias" class="col-md-8">
+                        <div class="col-md-8">
                             <h4>Noticias</h4>
                             <!-- noticias -->
                             <div class="media" v-for="(v,index) in 'vainas'">
@@ -142,7 +143,7 @@
                             </div>
                             <!-- /noticias -->
                         </div>
-                        <div id="eventos" class="col-md-4">
+                        <div class="col-md-4">
                             <!-- eventos -->
                             <h4>Eventos</h4>
                             <ul class="list-group">

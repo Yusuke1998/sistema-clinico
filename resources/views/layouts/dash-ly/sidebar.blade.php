@@ -1,11 +1,11 @@
 <nav id="sidebar" aria-label="Main Navigation">
-    <div class="content-header bg-white-5">
-        <a href="{{ url('/dashboard') }}">
+    <div class="content-header">
+        <a href="{{ url('/dashboard') }}" class="bg-white">
             <span class="smini-show">
                 <i class="fa fa-star text-primary"></i>
             </span>
             <span class="smini-hide">
-                <img src="{{ asset('img/new-logo.png') }}" style="width:75%;" alt="LOGO-UNERG">
+                <img src="{{ asset('website/img/logo.png') }}" style="width:75%;" alt="Yusuke1998">
             </span>
         </a>
         <div>
@@ -45,12 +45,12 @@
             <li class="nav-main-item {{ Sidebar::here(['profesores','profesores/ordinarios','profesores/contratados']) }}">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                     <i class="nav-main-link-icon si si-energy"></i>
-                    <span class="nav-main-link-name">PERSONAL DOCENTE</span>
+                    <span class="nav-main-link-name">HISTORIAL</span>
                 </a>
                 <ul class="nav-main-submenu">
                     <li class="nav-main-item">
                         <a class="nav-main-link {{ request()->is('profesores/ordinarios')?'active':'' }}" href="#">
-                            <span class="nav-main-link-name">Ordinario</span>
+                            <span class="nav-main-link-name">MIS DATOS</span>
                         </a>
                     </li>
                 </ul>
