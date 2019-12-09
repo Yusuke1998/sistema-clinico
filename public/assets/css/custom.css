@@ -1,0 +1,14 @@
+.table-responsive > .table > tbody > tr > td > ul{
+	background: lightgray !important;
+	color: darkblue !important;
+	border-radius: 10px !important;
+}
+.table-responsive > .table > tbody > tr > td > ul > li{
+	list-style-type:square !important;
+}
+
+.vs--disabled{
+	/*background: #000000 !important;*/
+	/*color: darkblue !important;*/
+	/*color: red !important;*/
+}
