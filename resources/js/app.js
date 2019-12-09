@@ -4,13 +4,11 @@ window.Vue = require('vue');
 
 // DECLARANDO COMPONENTES
 Vue.component('pagination', require('./components/Utilities/PaginationComponent.vue').default);
+// FIN DECLARAR COMPONENTES
 
 /* PLUGINS */
 import Carousel from 'vue-owl-carousel';
     Vue.component('v-carousel', Carousel);
-
-import Modal from "@melmacaluso/vue-modal";
-    Vue.component('v-modal', Modal);
 
 import swal from 'sweetalert';
 
