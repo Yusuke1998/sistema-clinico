@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'username', 'email', 'password', 'person_id'
+        'username', 'email', 'password', 'person_id', 'type'
     ];
 
     protected $hidden = [
@@ -29,7 +29,6 @@ class User extends Authenticatable
 
     public function is_admin()
     {
-        if (!is_null($this->person->types()->where('name', 'root')->first())) return true;
-        return false;
+        return ($this->type == 'root')?true:false;
     }
 }

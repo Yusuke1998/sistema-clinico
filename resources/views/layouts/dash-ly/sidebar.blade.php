@@ -42,19 +42,6 @@
                     <span class="nav-main-link-name">ADMINISTRACION</span>
                 </a>
             </li>
-            <li class="nav-main-item {{ Sidebar::here(['profesores','profesores/ordinarios','profesores/contratados']) }}">
-                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-energy"></i>
-                    <span class="nav-main-link-name">HISTORIAL</span>
-                </a>
-                <ul class="nav-main-submenu">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link {{ request()->is('profesores/ordinarios')?'active':'' }}" href="#">
-                            <span class="nav-main-link-name">MIS DATOS</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
         </ul>
     </div>
 </nav>

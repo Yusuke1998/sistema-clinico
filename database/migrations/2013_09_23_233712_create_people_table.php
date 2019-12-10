@@ -12,7 +12,10 @@ class CreatePeopleTable extends Migration
             $table->bigIncrements('id');
             $table->string('firstname');
             $table->string('lastname');
+            $table->string('firstnameii');
+            $table->string('lastnameii');
             $table->string('nro_document')->unique();
+            $table->enum('gender',['m','f']);
             $table->string('img_document')
                 ->default('documents/default.png');
             $table->date('birthday')->nullable();

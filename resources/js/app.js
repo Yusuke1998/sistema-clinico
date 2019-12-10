@@ -2,11 +2,13 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-// DECLARANDO COMPONENTES
+// componente
 Vue.component('pagination', require('./components/Utilities/PaginationComponent.vue').default);
-// FIN DECLARAR COMPONENTES
+Vue.component('chart-component', require('./components/Utilities/ChartComponent.vue').default);
+Vue.component('historial-component', require('./components/Website/historialComponent.vue').default);
+// componente
 
-/* PLUGINS */
+/* plugins */
 import Carousel from 'vue-owl-carousel';
     Vue.component('v-carousel', Carousel);
 
@@ -34,20 +36,25 @@ import 'vue-select/dist/vue-select.css';
 import Datepicker from 'vuejs-datepicker';
 import {en, es} from 'vuejs-datepicker/dist/locale'
     Vue.component('datepicker', Datepicker)
-/* FIN DE PLUGINS */
+/* plugins */
 
 const app = new Vue({
     el: '#app',
     data(){
         return {
-            base_url:location.href
+            base_url:location.href,
+            base_origin_url:location.origin,
+            sesion:{
+                user:global.user,
+                person:global.person,
+                is_admin:global.is_admin
+            }
         }
     },
     mounted(){
-        console.log(this.base_url)
     },
     methods:{
-        /* REUTILIZABLESS */
+        /* reutilizables */
         loading(name, content)
         {
             swal({

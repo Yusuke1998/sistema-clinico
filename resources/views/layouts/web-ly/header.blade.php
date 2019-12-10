@@ -7,10 +7,25 @@
                 </div>
                 <div class="col-sm-6 col-md-6">
                     @guest
-                    <a href="#" style="margin-left: 3%;" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#acceder">Ingresar</a>
+                    <a href="#" style="margin-left: 2%;" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#acceder">Ingresar</a>
                     <a href="#" class="btn btn-xs btn-primary pull-right" data-toggle="modal" data-target="#registro">Crear Cuenta</a>
                     @else
-                    <a href="{{url('/dashboard')}}" class="btn btn-xs btn-primary pull-right">Volver</a>
+
+                    <!-- cerrar sesion -->
+                    <a data-toggle="tooltip" title="Cerrar Sesión" href="{{ route('logout') }}" 
+                        style="margin-left: 2%;" 
+                        class="btn btn-xs btn-primary pull-right" 
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir</a>
+                    <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <!-- /cerrar sesion -->
+
+                    <!-- usuario -->
+                    <a href="{{url('/web/historial')}}" style="margin-left: 2%;" class="btn btn-xs btn-primary pull-right">Historial</a>
+                    
+                    <a href="{{url('/web/usuario')}}" class="btn btn-xs btn-primary pull-right">Usuario</a>
+                    <!-- /usuario -->
                     @endguest
                 </div>
             </div>
@@ -27,15 +42,15 @@
         </div>
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#intro">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#noticias-eventos">Noticias</a></li>
-            <li><a href="#noticias-eventos">Eventos</a></li>
-            <li><a href="#contactos">Contactos</a></li>
+            <li class="{{ request()->is('/')?'active':'' }}"><a href="{{ url('/') }}">Inicio</a></li>
+            <li class="{{ request()->is('servicios')?'active':'' }}"><a href="{{ url('servicios') }}">Servicios</a></li>
+            <li class="{{ request()->is('noticias')?'active':'' }}"><a href="{{ url('noticias') }}">Noticias</a></li>
+            <li class="{{ request()->is('eventos')?'active':'' }}"><a href="{{ url('eventos') }}">Eventos</a></li>
+            <li class="{{ request()->is('contactos')?'active':'' }}"><a href="{{ url('contactos') }}">Contactos</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>Más <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Convenios</a></li>
+                <li><a href="{{ url('convenios') }}">Convenios</a></li>
               </ul>
             </li>
           </ul>

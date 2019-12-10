@@ -9,8 +9,11 @@ class UsersTableSeeder extends Seeder
         // Administrador
     	$document = App\Document::first();
     	$person = App\Person::create([
-            'firstname'		=>	'Jhonny Jose',
-            'lastname'		=>	'Pérez Martinez',
+            'firstname'     =>  'Jhonny',
+            'firstnameii'	=>	'Jose',
+            'lastname'      =>  'Pérez',
+            'lastnameii'    =>  'Martinez',
+            'gender'	    =>	'm',
             'document_id'	=>	$document->id,
             'nro_document'	=>	'26039408',
             'birthday'		=>	'1998-02-27',

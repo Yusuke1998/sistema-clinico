@@ -225,6 +225,6 @@ class UsersController extends Controller
         if(!Auth::User()->is_admin()) $username = Auth::User()->username;
 
         $usuario=($username == '')?Auth::User():User::where('username',$username)->first();
-        return(!$request->ajax())?view('users.profile'):$usuario->load('person.document');
+        return(!$request->ajax())?view('admin.profile'):$usuario->load('person.document');
     }
 }

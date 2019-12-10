@@ -7,8 +7,10 @@
 	list-style-type:square !important;
 }
 
-.vs--disabled{
-	/*background: #000000 !important;*/
-	/*color: darkblue !important;*/
-	/*color: red !important;*/
+.custom-pt{
+	padding-top: 150px !important;
+}
+
+.bg-white{
+	background: white !important;
 }

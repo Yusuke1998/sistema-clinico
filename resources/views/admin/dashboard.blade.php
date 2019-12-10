@@ -8,6 +8,6 @@
     </div>
 </div>
 <div class="content content-narrow">
-	<!-- <chart-component></chart-component> -->
+	<chart-component></chart-component>
 </div>
 @stop

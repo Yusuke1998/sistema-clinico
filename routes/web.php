@@ -2,24 +2,36 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@website')
-	->name('website');
+// sin estar autenticados
+Route::view('/','web.inicio')->name('website');
+Route::view('servicios','web.servicios');
+Route::view('noticias','web.noticias');
+Route::view('eventos','web.eventos');
+Route::view('contactos','web.contactos');
+Route::view('convenios','web.convenios');
 
-Route::get('/dashboard', 'HomeController@dashboard')
-	->name('dashboard')
-	->middleware('auth');
+// estando autenticados
+Route::group(['prefix'=>'web', 'middleware'=>'auth'],function(){
+	Route::view('/usuario','web.user');
+	Route::view('/historial','web.record');
+});
 
-// DATA
+Route::group(['prefix'=>'administracion', 'middleware'=>'auth'],function(){
+	// siendo administrador
+	Route::view('/inicio', 'admin.dashboard')
+		->name('dashboard')
+		->middleware('auth');
+		
+	// usuarios
+	Route::get('/usuarios', 'UsersController@index')
+		->name('users.index')
+		->middleware('auth');
+	Route::post('/get-users','UsersController@userDataTable');
+	Route::post('/store-user','UsersController@store');
+	Route::post('/update-user','UsersController@update');
+	Route::post('/delete-user','UsersController@destroy');
+	Route::get('/perfil/{username?}','UsersController@profile')->name('profile');
+});
+
+// utilidades
 Route::get('/get-documents', 'DocumentController@getAll');
-// FIN DATA
-
-// USUARIOS
-Route::get('/usuarios', 'UsersController@index')
-	->name('users.index')
-	->middleware('auth');
-Route::post('/get-users','UsersController@userDataTable');
-Route::post('/store-user','UsersController@store');
-Route::post('/update-user','UsersController@update');
-Route::post('/delete-user','UsersController@destroy');
-Route::get('/profile-user/{username?}','UsersController@profile')->name('profile');
-// FIN USUARIOS

@@ -1,6 +1,3 @@
-@php 
-    $username = (Auth::User())?Auth::User()->username:'' 
-@endphp
 <header id="page-header">
     <div class="content-header">
         <div class="d-flex align-items-center">
@@ -15,7 +12,7 @@
             <div class="dropdown d-inline-block ml-2">
                 <button type="button" class="btn btn-sm btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded" src="{{ asset('img/default.png') }}" alt="Header Avatar" style="width: 18px;">
-                    <span class="d-none d-sm-inline-block ml-1 text-uppercase">{{ $username }}</span>
+                    <span v-text="sesion.user.username" class="d-none d-sm-inline-block ml-1 text-uppercase"></span>
                     <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-user-dropdown">
@@ -23,7 +20,7 @@
                         <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ asset('img/default.png') }}" alt="">
                     </div>
                     <div class="p-2">
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('profile',$username) }}">
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" :href="base_origin_url+'/administracion/perfil/'+sesion.user.username">
                             <span>Perfil</span>
                             <span>
                                 <i class="si si-user ml-1"></i>

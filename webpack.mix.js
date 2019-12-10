@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
         'public/website/css/style.css',
         'public/website/bodybg/bg1.css',
         'public/website/color/default.css',
+        'public/assets/css/custom.css'
     ],'public/css/website.css')
 
    .scripts([
